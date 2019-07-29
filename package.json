@@ -1,10 +1,10 @@
 {
-  "name": "g2dev.ggtranslate",
-  "version": "1.0.0",
+  "name": "g2dev.ggltranslate",
+  "version": "0.0.1b",
   "description": "util of google transelate",
   "main": "./src/index.js",
   "scripts": {
-	"start" : "electron ."
+	"start" : "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,9 +15,33 @@
     "google",
     "translation"
   ],
+  "build": {
+	"asar": true,
+	"appId": "g2dev.ggltranslate",
+	"productName": "ggltranslate",
+	"win": {
+	"target": [
+		{
+			"target": "nsis",
+			"arch": [
+				"x64",
+				"ia32"
+			]
+		}
+	]
+	},
+	"nsis": {
+	"oneClick": false,
+	"perMachine": false,
+	"createDesktopShortcut": true,
+	"allowToChangeInstallationDirectory":true
+	}
+  },
+
   "author": "g2",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^5.0.8"
+    "electron": "^5.0.8",
+	"electron-builder" : "^21.1.5"
   }
 }

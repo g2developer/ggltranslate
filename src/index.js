@@ -1,6 +1,6 @@
 const { app, BrowserWindow, globalShortcut } = require('electron')
 
-// window 객체는 전역 변수로 유지. 이렇게 하지 않으면, 
+// window 객체는 전역 변수로 유지. 이렇게 하지 않으면,
 // 자바스크립트 객체가 가비지 콜렉트될 때 자동으로 창이 닫힐 것입니다.
 let win
 
@@ -13,13 +13,14 @@ function createWindow () {
       nodeIntegration: true
     }
   })
+  win.setMenu(null);
 
   // and load the index.html of the app.
   // win.loadFile('index.html')
   win.loadURL('https://translate.google.co.kr/?hl=ko')
 
   // 개발자 도구를 엽니다.
-  win.webContents.openDevTools()
+  // win.webContents.openDevTools()
 
   globalShortcut.register('Alt+`', () => {
 	win.show();
@@ -30,13 +31,13 @@ function createWindow () {
 
   // 창이 닫힐 때 발생합니다
   win.on('closed', () => {
-    // window 객체에 대한 참조해제. 여러 개의 창을 지원하는 앱이라면 
+    // window 객체에 대한 참조해제. 여러 개의 창을 지원하는 앱이라면
     // 창을 배열에 저장할 수 있습니다. 이곳은 관련 요소를 삭제하기에 좋은 장소입니다.
     win = null
   })
 }
 
-// 이 메서드는 Electron이 초기화를 마치고 
+// 이 메서드는 Electron이 초기화를 마치고
 // 브라우저 창을 생성할 준비가 되었을 때  호출될 것입니다.
 // 어떤 API는 이 이벤트가 나타난 이후에만 사용할 수 있습니다.
 app.on('ready', createWindow)
@@ -57,4 +58,3 @@ app.on('activate', () => {
     createWindow()
   }
 })
-
