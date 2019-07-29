@@ -1,0 +1,23 @@
+{
+  "name": "g2dev.ggtranslate",
+  "version": "1.0.0",
+  "description": "util of google transelate",
+  "main": "./src/index.js",
+  "scripts": {
+	"start" : "electron ."
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/g2developer/ggltranslate.git"
+  },
+  "keywords": [
+    "google",
+    "translation"
+  ],
+  "author": "g2",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^5.0.8"
+  }
+}
