@@ -41,7 +41,7 @@
   "author": "g2",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^5.0.8",
+    "electron": "^9.1.0",
 	"electron-builder" : "^21.1.5"
   }
 }
